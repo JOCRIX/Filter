@@ -1,4 +1,4 @@
-unsigned long previousMicros = 0;  // will store last time LED was updated
+unsigned long previousMicros = 0; 
 
 #define b0 19
 #define b1 20
@@ -20,7 +20,7 @@ int state = 0;
 float y0fil = 0;
 float y1fil = 0;
 float x0fil = 0;
-uint8_t outArr[10] = { b0, b1, b2, b3, b4, b5, b6, b7, b8, b9 };
+uint8_t outPins[10] = { b0, b1, b2, b3, b4, b5, b6, b7, b8, b9 };
 
 
 void setup() {
@@ -92,9 +92,7 @@ void SetOutput(float filterOut) {
   ////  Serial.print(outVals[i]);
   }
   //Serial.println();
-
-
   for (uint8_t j = 0; j < 10; j++) {
-    digitalWrite(outArr[j], outVals[j]);
+    digitalWrite(outPins[j], outVals[j]);
   }
 }
