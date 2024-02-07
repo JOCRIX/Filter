@@ -51,21 +51,17 @@ void setup() {
 
 void loop() {
 
-  
   unsigned long currentMicros = micros();
-
 
   if (currentMicros - previousMicros >= samplePeriod) {
 
     previousMicros = currentMicros;
     x0fil = (float)(analogRead(1));
     y0fil = x0fil * 0.1453631 + y1fil * 0.8546369;
-
     y1fil = y0fil;
 
-    //Serial.println(y0fil);
     SetOutput(y0fil);
-    previousMicros = currentMicros;
+  //  previousMicros = currentMicros;
     /*
     if (state == 0) {
       test1 = currentMicros;
@@ -89,9 +85,7 @@ void loop() {
 void SetOutput(float filterOut) {
 
   uint16_t outputVal = round(filterOut * 0.25);
-
   uint8_t outVals[10];
-
 
   for (uint8_t i = 0; i < 10; i++) {
     outVals[i] = outputVal & (1 << i);
