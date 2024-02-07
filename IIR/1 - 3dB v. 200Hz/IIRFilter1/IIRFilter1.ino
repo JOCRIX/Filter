@@ -87,10 +87,15 @@ void SetOutput(float filterOut) {
   uint16_t outputVal = round(filterOut * 0.25);
   uint8_t outVals[10];
 
-  for (uint8_t i = 0; i < 10; i++) {
+    for (uint8_t i = 2; i < 12; i++) {
     outVals[i] = outputVal & (1 << i);
   ////  Serial.print(outVals[i]);
   }
+/*
+  for (uint8_t i = 0; i < 10; i++) {
+    outVals[i] = outputVal & (1 << i);
+  ////  Serial.print(outVals[i]);
+  }*/
   //Serial.println();
   for (uint8_t j = 0; j < 10; j++) {
     digitalWrite(outPins[j], outVals[j]);
