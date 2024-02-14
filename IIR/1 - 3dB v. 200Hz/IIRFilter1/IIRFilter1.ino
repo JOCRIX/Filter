@@ -88,7 +88,7 @@ void SetOutput(float filterOut) {
   uint8_t outVals[10];
 
     for (uint8_t i = 2; i < 12; i++) {
-    outVals[i] = outputVal & (1 << i);
+    outVals[i - 2] = outputVal & (1 << i);
   ////  Serial.print(outVals[i]);
   }
 /*
