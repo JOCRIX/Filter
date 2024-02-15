@@ -44,9 +44,7 @@ fs = 8E3
 Ts = 1/fs
 Bdisc = c2d(B, Ts, 'impulse')
 
-
-
-
+%bodeplot(Bdisc)
 
 
 
