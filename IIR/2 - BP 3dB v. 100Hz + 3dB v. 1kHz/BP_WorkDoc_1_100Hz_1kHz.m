@@ -46,5 +46,5 @@ Bdisc = c2d(B, Ts, 'impulse')
 
 %bodeplot(Bdisc)
 
-
+1986 / (2*pi)
 
